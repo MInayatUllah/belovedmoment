@@ -21,11 +21,8 @@ export async function POST(request) {
         .from('orders')
         .insert({
           email: customer_email,
-          stripe_session_id: sessionId,
           image_url: null,
           processing_time: '48h',
-          amount: amount_total,
-          status: 'pending'
         })
         .select()
         .single()

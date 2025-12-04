@@ -34,7 +34,6 @@ export default function ProductSection() {
     if (!uploadedFile) return;
     
     try {
-      // Store image in sessionStorage temporarily
       const imageId = Date.now().toString();
       sessionStorage.setItem(`image_${imageId}`, uploadedFile.dataUrl);
       sessionStorage.setItem('processingTime', selectedTime);
@@ -51,7 +50,6 @@ export default function ProductSection() {
       
       const { url } = await response.json();
       
-      // Redirect to Stripe checkout URL
       window.location.href = url;
     } catch (error) {
       console.error('Checkout error:', error);
