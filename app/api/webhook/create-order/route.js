@@ -6,7 +6,6 @@ export async function POST(request) {
     const body = await request.text()
     const signature = request.headers.get('stripe-signature')
 
-    // Verify webhook signature
     const event = stripe.webhooks.constructEvent(
       body,
       signature,
@@ -16,17 +15,15 @@ export async function POST(request) {
     if (event.type === 'checkout.session.completed') {
       const session = event.data.object
       
-      // Get session details
       const { customer_email, amount_total, id: sessionId } = session
 
-      // Create order in database (without image for now - will be updated later)
       const { data: orderData, error: orderError } = await supabaseAdmin
         .from('orders')
         .insert({
           email: customer_email,
           stripe_session_id: sessionId,
-          image_url: null, // Will be updated when image is uploaded
-          processing_time: '48h', // Default for now
+          image_url: null,
+          processing_time: '48h',
           amount: amount_total,
           status: 'pending'
         })

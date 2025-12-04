@@ -4,12 +4,10 @@ export async function POST(request) {
   try {
     const { processingTime } = await request.json()
     
-    // Get price ID based on processing time
     const priceId = processingTime === '15h' 
       ? process.env.STRIPE_PRICE_ID_15H 
       : process.env.STRIPE_PRICE_ID_48H
 
-    // Create simple checkout session
     const session = await stripe.checkout.sessions.create({
       payment_method_types: ['card'],
       line_items: [
