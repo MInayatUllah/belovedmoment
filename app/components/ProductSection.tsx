@@ -3,26 +3,44 @@
 import { useState } from 'react';
 import Image from 'next/image';
 
+
 export default function ProductSection() {
   const [selectedTime, setSelectedTime] = useState('48h');
-  const [uploadedFile, setUploadedFile] = useState<{file: File, dataUrl: string} | null>(null);
+  const [uploadedFile, setUploadedFile] = useState<{file: File, dataUrl: string, url: string} | null>(null);
   const [isUploading, setIsUploading] = useState(false);
 
   const price = selectedTime === '48h' ? 15 : 20;
 
-  const handleFileUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleFileUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     if (file) {
       setIsUploading(true);
-      const reader = new FileReader();
-      reader.onload = () => {
-        setUploadedFile({
-          file,
-          dataUrl: reader.result as string
+      
+      try {
+        const formData = new FormData();
+        formData.append('file', file);
+        
+        const response = await fetch('/api/upload', {
+          method: 'POST',
+          body: formData
         });
+        
+        const { url } = await response.json();
+        
+        const reader = new FileReader();
+        reader.onload = () => {
+          setUploadedFile({
+            file,
+            dataUrl: reader.result as string,
+            url
+          });
+          setIsUploading(false);
+        };
+        reader.readAsDataURL(file);
+      } catch (error) {
+        console.error('Upload error:', error);
         setIsUploading(false);
-      };
-      reader.readAsDataURL(file);
+      }
     }
   };
 
@@ -34,17 +52,14 @@ export default function ProductSection() {
     if (!uploadedFile) return;
     
     try {
-      const imageId = Date.now().toString();
-      sessionStorage.setItem(`image_${imageId}`, uploadedFile.dataUrl);
-      sessionStorage.setItem('processingTime', selectedTime);
-      
       const response = await fetch('/api/checkout', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          processingTime: selectedTime
+          processingTime: selectedTime,
+          imageUrl: uploadedFile.url
         })
       });
       

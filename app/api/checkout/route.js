@@ -2,8 +2,7 @@ import { stripe } from '../../../lib/stripe'
 
 export async function POST(request) {
   try {
-    const { processingTime } = await request.json()
-    
+    const { processingTime, imageUrl } = await request.json();
     const priceId = processingTime === '15h' 
       ? process.env.STRIPE_PRICE_ID_15H 
       : process.env.STRIPE_PRICE_ID_48H
@@ -19,6 +18,10 @@ export async function POST(request) {
       mode: 'payment',
       success_url: `${process.env.NEXT_PUBLIC_APP_URL}/success?session_id={CHECKOUT_SESSION_ID}`,
       cancel_url: `${process.env.NEXT_PUBLIC_APP_URL}/#Product`,
+      metadata: {
+        imageUrl,
+        processingTime
+      }
     })
 
     return Response.json({ url: session.url })

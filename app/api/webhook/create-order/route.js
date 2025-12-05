@@ -15,14 +15,17 @@ export async function POST(request) {
     if (event.type === 'checkout.session.completed') {
       const session = event.data.object
       
-      const { customer_email, amount_total, id: sessionId } = session
+      const { customer_email, amount_total, id: sessionId, metadata } = session
+      const { imageUrl, processingTime } = metadata
 
       const { data: orderData, error: orderError } = await supabaseAdmin
         .from('orders')
         .insert({
           email: customer_email,
-          image_url: null,
-          processing_time: '48h',
+          image_url: imageUrl,
+          processing_time: processingTime,
+          session_id: sessionId,
+          total_in_cents: amount_total
         })
         .select()
         .single()

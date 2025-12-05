@@ -1,20 +1,8 @@
 'use client';
 
-import { useEffect, useState, Suspense } from 'react';
-import { useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 
-function SuccessContent() {
-  const searchParams = useSearchParams();
-  const sessionId = searchParams.get('session_id');
-  const [orderDetails, setOrderDetails] = useState<{sessionId: string} | null>(null);
-
-  useEffect(() => {
-    if (sessionId) {
-      setOrderDetails({ sessionId });
-    }
-  }, [sessionId]);
-
+export default function SuccessPage() {
   return (
     <div className="min-h-screen bg-white flex items-center justify-center">
       <div className="max-w-md mx-auto text-center p-8">
@@ -57,13 +45,5 @@ function SuccessContent() {
         </div>
       </div>
     </div>
-  );
-}
-
-export default function SuccessPage() {
-  return (
-    <Suspense fallback={<div className="min-h-screen bg-white flex items-center justify-center"><div>Loading...</div></div>}>
-      <SuccessContent />
-    </Suspense>
   );
 }
