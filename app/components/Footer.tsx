@@ -10,7 +10,7 @@ export default function Footer() {
             <h3 className="text-lg font-semibold mb-4 text-blue-400">Quick Links</h3>
             <div className="space-y-2">
               <Link href="/" className="block hover:text-blue-400">Home</Link>
-              <Link href="/product" className="block hover:text-blue-400">Order Now</Link>
+              <Link href="#Product" className="block hover:text-blue-400">Order Now</Link>
               <Link href="/before-after" className="block hover:text-blue-400">Before & After</Link>
               <Link href="#how-it-works" className="block hover:text-blue-400">How it works</Link>
             </div>
@@ -19,11 +19,11 @@ export default function Footer() {
           <div>
             <h3 className="text-lg font-semibold mb-4 text-blue-400">Support</h3>
             <div className="space-y-2">
-              <Link href="/faq" className="block hover:text-blue-400">FAQ</Link>
-              <Link href="/terms" className="block hover:text-blue-400">Terms & Conditions</Link>
-              <Link href="/privacy" className="block hover:text-blue-400">Privacy Policy</Link>
-              <Link href="/returns" className="block hover:text-blue-400">Return & Refund</Link>
-              <Link href="/contact" className="block hover:text-blue-400">Contact Us</Link>
+              <Link href="/#FAQ" className="block hover:text-blue-400">FAQ</Link>
+              <Link href="/terms-conditions" className="block hover:text-blue-400">Terms & Conditions</Link>
+              <Link href="/privacy-policy" className="block hover:text-blue-400">Privacy Policy</Link>
+              <Link href="/return-refund-policy" className="block hover:text-blue-400">Return & Refund</Link>
+              <Link href="/shipping-policy" className="block hover:text-blue-400">Shipping Policy</Link>
             </div>
           </div>
 

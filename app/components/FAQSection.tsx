@@ -7,28 +7,48 @@ export default function FAQSection() {
 
   const faqs: Array<{question: string; answer: string}> = [
     {
-      question: "What kind of images work best?",
-      answer: "High-quality portraits with clear facial features work best. Images should be at least 512x512 pixels for optimal results. We support JPG, PNG, and WEBP formats."
+      question: "Can I trust Beloved Moment with my photos and memories?",
+      answer: "Yes, completely. At Beloved Moment, your photos and memories are treated with respect, care, and privacy. We use secure systems to process your uploads and never sell or share your content with third parties. Your moments belong to you always."
     },
     {
-      question: "How long does it take to process?",
-      answer: "Processing time depends on your selected option: 15 hours for premium service or 48 hours for standard service. You'll receive an email notification when your video is ready."
+      question: "How long does it take to receive my video after placing an order?",
+      answer: "Most videos are completed within 24 to 48 hours, depending on the options you select while ordering. During busy periods, it may take slightly longer — but you'll always be kept updated on the progress."
     },
     {
-      question: "What video formats do you provide?",
-      answer: "We provide MP4 videos in HD quality (1080p) that are compatible with all major platforms and devices. Videos are typically 6-10 seconds long."
+      question: "How should I prepare my photos before uploading them?",
+      answer: "For the best results, we recommend: Using clear, high-quality images. Avoiding heavily blurred or pixelated photos. Choosing images with good lighting. No special editing is required — just send your favourite moments as they are."
     },
     {
-      question: "Can I use the videos commercially?",
-      answer: "Yes, you have full commercial rights to use the generated videos for your business, marketing, or any commercial purposes once you purchase our service."
+      question: "Can I upload photos of printed pictures taken with my phone?",
+      answer: "Yes, you can. If you're photographing printed images, simply try to: Avoid glare and shadows. Take the photo in good lighting. Keep the image straight and in focus. The clearer the photo, the better the final result."
     },
     {
-      question: "What if I'm not satisfied with the result?",
-      answer: "We offer a 30-day money-back guarantee. If you're not satisfied with the quality, contact our support team for a full refund or free revision."
+      question: "I'm having trouble placing an order or uploading photos — can you help?",
+      answer: "Feel free to ask! If you experience any issues during checkout or uploading, simply contact our support team. We'll walk you through the process and make sure your order is completed smoothly."
     },
     {
-      question: "Is my data secure and private?",
-      answer: "Absolutely. We use enterprise-grade encryption and never share your images with third parties. All uploaded images are automatically deleted after 30 days."
+      question: "How will I know that my photos have been successfully submitted?",
+      answer: "Once your upload is complete, you'll see a confirmation on screen, and you'll also receive a confirmation email after checkout."
+    },
+    {
+      question: "Who owns the rights to the photos and videos I upload or receive?",
+      answer: "You always retain full ownership of your photos and the final video we delivered. Beloved Moment does not claim any rights over your content. We simply use your images to create the video you requested."
+    },
+    {
+      question: "Can I request that my photos and videos not be stored after delivery?",
+      answer: "Yes. If you prefer your files not to be stored, simply contact us after receiving your video and request removal. We will permanently delete your content from our systems."
+    },
+    {
+      question: "What if I'm not satisfied with my final video?",
+      answer: "Your happiness matters to us. If something doesn't feel right, let us know. Depending on the situation, we will make reasonable adjustments or corrections to ensure you're satisfied with the final result."
+    },
+    {
+      question: "Are there any platforms that offer a similar service?",
+      answer: "While other services may be available, Beloved Moment focuses on creating a more emotional, personal, and carefully crafted experience, with dedicated support and attention to each memory you share."
+    },
+    {
+      question: "How can I contact Beloved Moment if I need support or have questions?",
+      answer: "You can reach us through our Contact Us page or by email. Our support team aims to reply within 24 hours and will be happy to assist you with anything you need."
     }
   ];
 
@@ -37,7 +57,7 @@ export default function FAQSection() {
   };
 
   return (
-    <section className="py-20 border-t border-slate-700" style={{ backgroundColor: 'rgb(3, 3, 3)' }}>
+    <section id="FAQ" className="py-20 border-t border-slate-700" style={{ backgroundColor: 'rgb(3, 3, 3)' }}>
       <div className="container mx-auto px-4 max-w-4xl">
         <div className="text-center mb-16">
           <h2 className="text-4xl lg:text-5xl font-bold text-white mb-4">

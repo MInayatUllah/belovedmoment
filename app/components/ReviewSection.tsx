@@ -6,9 +6,10 @@ export default function ReviewSection() {
   const [showMore, setShowMore] = useState(false);
 
   const videos = [
-    'https://general.cdn.giannabellucci.com/cgp/brand/momento/results/ww2wedding.mp4',
-    'https://general.cdn.giannabellucci.com/cgp/brand/momento/results/urbanc.mp4',
-    'https://general.cdn.giannabellucci.com/cgp/brand/momento/results/walking%20the%20isle-2.mp4'
+    '/gifs/Beloved Moment (1).gif',
+    '/gifs/Beloved Moment 3 (2).gif',
+    '/gifs/Beloved Moment 3 (4).gif',
+    '/gifs/Beloved Moment.gif'
   ];
 
   const reviews = [
@@ -55,16 +56,13 @@ export default function ReviewSection() {
             <div key={index} className="flex h-fit flex-col items-start gap-4 rounded-2xl border border-white/15 bg-slate-900/30 p-6 backdrop-blur-xl">
               
               {/* Video */}
-              <div className="pointer-events-none relative flex max-w-[80vw] gap-4">
-                <div className="h-fit max-w-[450px] px-5 pt-10">
+              <div className="pointer-events-none relative w-full">
+                <div className="h-fit max-w-[450px]">
                   <div className="relative h-fit overflow-hidden rounded-[14px]">
-                    <video 
-                      autoPlay 
-                      loop 
-                      muted 
-                      playsInline 
+                    <img 
                       src={videos[index % videos.length]} 
-                      className="max-h-96"
+                      alt=""
+                      className="max-h-96 w-100 object-cover"
                     />
                   </div>
                 </div>
@@ -109,7 +107,7 @@ export default function ReviewSection() {
         <div className="text-center mt-12">
           <button 
             onClick={() => setShowMore(!showMore)}
-            className="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
+            className="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors cursor-pointer"
           >
             {showMore ? 'Show Less' : 'Load More'}
           </button>
