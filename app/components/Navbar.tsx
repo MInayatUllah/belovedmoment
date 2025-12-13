@@ -111,31 +111,47 @@ export default function Navbar() {
 
       {/* Mobile Sidebar */}
       <div className={`fixed inset-0 z-50 md:hidden transition-opacity duration-300 ${isMobileMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}>
-        <div className="fixed inset-0 bg-black/50" onClick={() => setIsMobileMenuOpen(false)}></div>
-        <div className={`fixed right-0 top-0 h-full w-64 bg-purple-900/95 backdrop-blur-xl border-l border-white/10 transform transition-transform duration-300 ease-in-out ${isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
-            <div className="flex justify-between items-center p-4 border-b border-white/10">
-              <img src="/logos/Beloved Moment Logo transparent.svg" alt="Beloved Moment" className="h-6" />
-              <button onClick={() => setIsMobileMenuOpen(false)} className="text-white">
+        <div className="fixed inset-0 bg-black/60 backdrop-blur-sm" onClick={() => setIsMobileMenuOpen(false)}></div>
+        <div className={`fixed right-0 top-0 h-full w-80 bg-gradient-to-b from-purple-900/95 to-slate-900/95 backdrop-blur-xl border-l border-purple-500/30 shadow-2xl transform transition-all duration-500 ease-out ${isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
+            <div className="flex justify-between items-center p-6 border-b border-purple-500/30 bg-purple-800/20">
+              <img src="/logos/Beloved Moment Logo transparent.svg" alt="Beloved Moment" className="h-8" />
+              <button onClick={() => setIsMobileMenuOpen(false)} className="text-white hover:text-purple-300 p-2 rounded-full hover:bg-white/10 transition-all duration-200">
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                 </svg>
               </button>
             </div>
-            <div className="p-4 space-y-4">
-              <Link href="/before-after" className="block text-white hover:text-blue-300 py-1" onClick={() => setIsMobileMenuOpen(false)}>
-                Before & After
-              </Link>
-              <Link href="#how-it-works" className="block text-white hover:text-blue-300 py-1" onClick={() => setIsMobileMenuOpen(false)}>
-                How it works
-              </Link>
-              <div className="border-t border-white/10 pt-4">
-                <p className="text-white/70 text-sm mb-2">Help & Support</p>
-                <Link href="/#FAQ" className="block text-white hover:text-blue-300 py-1 text-sm" onClick={() => setIsMobileMenuOpen(false)}>FAQ</Link>
-                <Link href="/shipping-policy" className="block text-white hover:text-blue-300 py-1 text-sm" onClick={() => setIsMobileMenuOpen(false)}>Shipping Policy</Link>
-                <Link href="/privacy-policy" className="block text-white hover:text-blue-300 py-1 text-sm" onClick={() => setIsMobileMenuOpen(false)}>Privacy Policy</Link>
-                <Link href="/return-refund-policy" className="block text-white hover:text-blue-300 py-1 text-sm" onClick={() => setIsMobileMenuOpen(false)}>Return & Refund</Link>
-                <Link href="/terms-conditions" className="block text-white hover:text-blue-300 py-1 text-sm" onClick={() => setIsMobileMenuOpen(false)}>Terms & Conditions</Link>
-                <Link href="/contact" className="block text-white hover:text-blue-300 py-1 text-sm" onClick={() => setIsMobileMenuOpen(false)}>Contact Us</Link>
+            <div className="p-6 space-y-6">
+              <div className="space-y-3">
+                <Link href="/#Reviewes" className="flex items-center gap-3 text-white hover:text-purple-300 py-3 px-4 rounded-xl hover:bg-white/10 transition-all duration-200 group" onClick={() => setIsMobileMenuOpen(false)}>
+                  <span className="font-medium">Before & After</span>
+                </Link>
+                <Link href="#how-it-works" className="flex items-center gap-3 text-white hover:text-purple-300 py-3 px-4 rounded-xl hover:bg-white/10 transition-all duration-200 group" onClick={() => setIsMobileMenuOpen(false)}>
+                  <span className="font-medium">How it works</span>
+                </Link>
+              </div>
+              <div className="border-t border-purple-500/30 pt-6">
+                <p className="text-purple-300 text-sm font-semibold mb-4 px-4">Help & Support</p>
+                <div className="space-y-2">
+                  <Link href="/#FAQ" className="flex items-center gap-3 text-white/90 hover:text-white py-2 px-4 rounded-lg hover:bg-white/5 transition-all duration-200 text-sm" onClick={() => setIsMobileMenuOpen(false)}>
+                    FAQ
+                  </Link>
+                  <Link href="/shipping-policy" className="flex items-center gap-3 text-white/90 hover:text-white py-2 px-4 rounded-lg hover:bg-white/5 transition-all duration-200 text-sm" onClick={() => setIsMobileMenuOpen(false)}>
+                    Shipping Policy
+                  </Link>
+                  <Link href="/privacy-policy" className="flex items-center gap-3 text-white/90 hover:text-white py-2 px-4 rounded-lg hover:bg-white/5 transition-all duration-200 text-sm" onClick={() => setIsMobileMenuOpen(false)}>
+                    Privacy Policy
+                  </Link>
+                  <Link href="/return-refund-policy" className="flex items-center gap-3 text-white/90 hover:text-white py-2 px-4 rounded-lg hover:bg-white/5 transition-all duration-200 text-sm" onClick={() => setIsMobileMenuOpen(false)}>
+                    Return & Refund
+                  </Link>
+                  <Link href="/terms-conditions" className="flex items-center gap-3 text-white/90 hover:text-white py-2 px-4 rounded-lg hover:bg-white/5 transition-all duration-200 text-sm" onClick={() => setIsMobileMenuOpen(false)}>
+                    Terms & Conditions
+                  </Link>
+                  <Link href="/contact" className="flex items-center gap-3 text-white/90 hover:text-white py-2 px-4 rounded-lg hover:bg-white/5 transition-all duration-200 text-sm" onClick={() => setIsMobileMenuOpen(false)}>
+                    Contact Us
+                  </Link>
+                </div>
               </div>
             </div>
           </div>

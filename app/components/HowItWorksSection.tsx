@@ -15,7 +15,7 @@ export default function HowItWorksSection() {
             How It Works
           </h2>
           <p className="text-gray-600 text-sm sm:text-base md:text-lg max-w-2xl mx-auto px-4">
-            Three simple steps to get up and running with your animation
+            Transform your cherished memories into living moments in just three easy steps
           </p>
         </div>
         
@@ -36,7 +36,7 @@ export default function HowItWorksSection() {
             </div>
             <h3 className="text-lg sm:text-xl font-semibold text-black mb-3">Upload Your Photo</h3>
             <p className="text-gray-600 text-sm sm:text-base">
-              Start with any image – portrait, product shot, or art. Just drag and drop.
+              Choose your favorite memory - family portraits, old photographs, or special moments. Simply drag and drop or browse to upload.
             </p>
           </div>
           
@@ -52,9 +52,9 @@ export default function HowItWorksSection() {
                 </svg>
               </div>
             </div>
-            <h3 className="text-lg sm:text-xl font-semibold text-black mb-3">AI Animation</h3>
+            <h3 className="text-lg sm:text-xl font-semibold text-black mb-3">Professional Animation</h3>
             <p className="text-gray-600 text-sm sm:text-base">
-              Our AI analyzes your photo and creates natural, lifelike movement and expressions.
+              Our skilled video editors with professional expertise bring your photos to life with natural, lifelike movement and expressions.
             </p>
           </div>
           
@@ -70,9 +70,9 @@ export default function HowItWorksSection() {
                 </svg>
               </div>
             </div>
-            <h3 className="text-lg sm:text-xl font-semibold text-black mb-3">Download Video</h3>
+            <h3 className="text-lg sm:text-xl font-semibold text-black mb-3">Receive Your Video</h3>
             <p className="text-gray-600 text-sm sm:text-base">
-              Receive your high-quality animated video ready to share with family and friends.
+              Get your stunning animated video delivered within 24-48 hours, ready to share and treasure forever with your loved ones.
             </p>
           </div>
         </div>

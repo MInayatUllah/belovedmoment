@@ -105,7 +105,7 @@ export default function ProductSection() {
             Transform Your Photos Into Living Memories
           </h2>
           <p className="text-sm sm:text-base md:text-lg text-gray-600 max-w-2xl mx-auto px-4">
-            We'll turn your old picture into a 6–10 second emotional video, delivered when you choose.
+            We'll turn your old picture into a 10 second emotional video, delivered when you choose.
           </p>
         </div>
 
@@ -115,7 +115,10 @@ export default function ProductSection() {
             {[1,2,3,4].map((i) => (
               <span key={i} className="text-yellow-400 text-2xl">★</span>
             ))}
-            <span className="text-yellow-400 text-2xl opacity-20">★</span>
+            <div className="relative text-2xl">
+              <span className="text-gray-300">★</span>
+              <span className="absolute inset-0 text-yellow-400 overflow-hidden" style={{width: '50%'}}>★</span>
+            </div>
           </div>
           <p className="text-gray-700 text-lg">
             <span className="font-bold">4.8</span> (2,785 reviews)
@@ -138,19 +141,7 @@ export default function ProductSection() {
           <div className="mb-6">
             <h3 className="text-base sm:text-lg font-semibold text-black mb-3">Delivery Speed</h3>
             <div className="flex gap-2 sm:gap-3 justify-center">
-              <button
-                onClick={() => setSelectedTime('48h')}
-                className={`p-3 sm:p-4 md:p-6 rounded-xl border-2 transition-all w-[140px] sm:w-[180px] md:w-[200px] cursor-pointer ${
-                  selectedTime === '48h' 
-                    ? 'border-[lab(23%_28.14_-32.02_/_0.8)] bg-purple-50' 
-                    : 'border-gray-200 hover:border-gray-300'
-                }`}
-              >
-                <div className="text-center">
-                  <p className="font-semibold text-black text-[24px]">48h</p>
-                  <p className="text-xs sm:text-sm text-gray-600">Standard</p>
-                </div>
-              </button>
+              
               <button
                 onClick={() => setSelectedTime('15h')}
                 className={`p-3 sm:p-4 rounded-xl border-2 transition-all relative w-[140px] sm:w-[180px] md:w-[200px] cursor-pointer ${
@@ -163,8 +154,22 @@ export default function ProductSection() {
                   POPULAR +$5
                 </div>
                 <div className="text-center">
-                  <p className="font-semibold text-black text-[24px]">15h</p>
+                  <p className="font-semibold text-black text-[24px]">24h</p>
                   <p className="text-sm text-gray-600">Express</p>
+                </div>
+              </button>
+
+              <button
+                onClick={() => setSelectedTime('48h')}
+                className={`p-3 sm:p-4 md:p-6 rounded-xl border-2 transition-all w-[140px] sm:w-[180px] md:w-[200px] cursor-pointer ${
+                  selectedTime === '48h' 
+                    ? 'border-[lab(23%_28.14_-32.02_/_0.8)] bg-purple-50' 
+                    : 'border-gray-200 hover:border-gray-300'
+                }`}
+              >
+                <div className="text-center">
+                  <p className="font-semibold text-black text-[24px]">48h</p>
+                  <p className="text-xs sm:text-sm text-gray-600">Standard</p>
                 </div>
               </button>
             </div>
