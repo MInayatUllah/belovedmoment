@@ -12,7 +12,7 @@ export async function POST(request) {
       : process.env.STRIPE_PRICE_ID_36H
 
     const session = await stripe.checkout.sessions.create({
-       currency: 'gbp',
+       currency: 'usd',
       payment_method_types: ['card'],
       line_items: [
         {
