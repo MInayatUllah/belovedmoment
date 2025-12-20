@@ -4,13 +4,13 @@ import { useState, useEffect } from 'react';
 import Image from 'next/image';
 
 export default function ProductSection() {
-  const [selectedTime, setSelectedTime] = useState('48h');
+  const [selectedTime, setSelectedTime] = useState('36h');
   const [uploadedFile, setUploadedFile] = useState<{file: File, dataUrl: string, url: string} | null>(null);
   const [isUploading, setIsUploading] = useState(false);
   const [shouldShine, setShouldShine] = useState(false);
 
-  const price = selectedTime === '48h' ? 15 : 20;
-  const originalPrice = selectedTime === '48h' ? 40 : 50;
+  const price = selectedTime === '36h' ? 9.99 : 14.99;
+  const originalPrice = selectedTime === '36h' ? 24.99 : 37.99;
 
   useEffect(() => {
     const handleHashChange = () => {
@@ -160,16 +160,16 @@ export default function ProductSection() {
               <p className="text-gray-600 text-sm font-medium uppercase tracking-wide">Total Price</p>
               <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3">
                 <div className="flex items-center gap-2">
-                  <span className="text-gray-400 text-lg sm:text-xl line-through">${originalPrice}</span>
+                  <p className="text-3xl sm:text-4xl font-bold text-black">£{price}</p>
+                  <span className="text-gray-400 text-lg sm:text-xl line-through">£{originalPrice}</span>
                   <div className="bg-red-500 text-white px-2 py-1 rounded-[50px] text-[8px] sm:text-[12px] font-bold">
                     60% OFF TODAY
                   </div>
                 </div>
-                <p className="text-3xl sm:text-4xl font-bold text-black">${price}.00</p>
               </div>
             </div>
-            <div className="bg-gradient-to-r from-green-500 to-emerald-500 text-white px-4 sm:px-6 py-2 rounded-full text-xs sm:text-sm font-bold shadow-lg">
-              ✨ Premium Quality
+            <div className="bg-green-100 border border-green-500 text-green-700 px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm font-bold">
+               Premium Quality
             </div>
           </div>
 
@@ -196,15 +196,15 @@ export default function ProductSection() {
               </button>
 
               <button
-                onClick={() => setSelectedTime('48h')}
+                onClick={() => setSelectedTime('36h')}
                 className={`p-3 sm:p-4 md:p-6 rounded-xl border-2 transition-all w-[140px] sm:w-[180px] md:w-[200px] cursor-pointer ${
-                  selectedTime === '48h' 
+                  selectedTime === '36h' 
                     ? 'border-[lab(23%_28.14_-32.02_/_0.8)] bg-purple-50' 
                     : 'border-gray-200 hover:border-gray-300'
                 }`}
               >
                 <div className="text-center">
-                  <p className="font-semibold text-black text-[24px]">48h</p>
+                  <p className="font-semibold text-black text-[24px]">36h</p>
                   <p className="text-xs sm:text-sm text-gray-600">Standard</p>
                 </div>
               </button>
@@ -316,7 +316,7 @@ export default function ProductSection() {
             }`}
             disabled={!uploadedFile}
           >
-            <span>🚀 Complete Your Order</span>
+            <span>Complete Your Order</span>
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 3h2l.4 2M7 13h10l4-8H5.4m0 0L7 13m0 0l-2.5 5M7 13v6a2 2 0 002 2h6M9 19v2m4-2v2" />
             </svg>

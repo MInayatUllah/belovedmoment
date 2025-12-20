@@ -4,10 +4,11 @@ export async function POST(request) {
   try {
     const { processingTime, imageUrl } = await request.json();
     const priceId = processingTime === '15h' 
-      ? process.env.STRIPE_PRICE_ID_15H 
-      : process.env.STRIPE_PRICE_ID_48H
+      ? process.env.STRIPE_PRICE_ID_24H 
+      : process.env.STRIPE_PRICE_ID_36H
 
     const session = await stripe.checkout.sessions.create({
+       currency: 'gbp',
       payment_method_types: ['card'],
       line_items: [
         {

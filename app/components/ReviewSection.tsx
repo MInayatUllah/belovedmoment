@@ -6,15 +6,16 @@ export default function ReviewSection() {
   const [showMore, setShowMore] = useState(false);
 
   const videos = [
-    '/gifs/Beloved Moment (1).gif',
-    '/gifs/Beloved Moment 3 (2).gif',
-    '/gifs/Beloved Moment 3 (4).gif',
-    '/gifs/Beloved Moment.gif',
-    '/gifs/5.gif',
-    '/gifs/6.gif',
-    '/gifs/7.gif',
-    '/gifs/8.gif',
-    '/gifs/9.gif'
+    '/gifs/review1.gif',
+    '/gifs/review2.gif',
+    '/gifs/review3.gif',
+    '/gifs/review4.gif',
+    '/gifs/review5.gif',
+    '/gifs/review6.gif',
+    '/gifs/review7.gif',
+    '/gifs/review8.gif',
+    '/gifs/review9.gif',
+    '/gifs/review9.gif'
   ];
 
   const reviews = [
@@ -44,7 +45,7 @@ export default function ReviewSection() {
             Hear From Our Happy Customers
           </h2>
           <p className="text-xl text-white/90 mb-4">
-            Where timeless memories transcend into living, breathing narratives that touch the heart.
+            Where photos turn into stories, and stories turn into feelings.
           </p>
           <p className="text-white/80 max-w-3xl mx-auto">
             Join thousands of families who have brought their precious memories to life with our expert editing team, creating magical moments that reconnect you with your loved ones.
@@ -120,7 +121,7 @@ export default function ReviewSection() {
             onClick={() => setShowMore(!showMore)}
             className="bg-white text-black px-8 py-3 rounded-[50px] font-semibold hover:bg-gray-100 transition-colors cursor-pointer inline-flex items-center gap-3 text-lg"
           >
-            <span>{showMore ? 'Show Less' : 'Load More'}</span>
+            <span>{showMore ? 'Show Less' : 'Load More Stories'}</span>
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={showMore ? "M5 15l7-7 7 7" : "M19 9l-7 7-7-7"} />
             </svg>
