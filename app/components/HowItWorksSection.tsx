@@ -72,7 +72,7 @@ export default function HowItWorksSection() {
             </div>
             <h3 className="text-lg sm:text-xl font-semibold text-black mb-3">Receive Your Video</h3>
             <p className="text-gray-600 text-sm sm:text-base">
-              Get your stunning animated video delivered within 24-48 hours, ready to share and treasure forever with your loved ones.
+              Get your stunning animated video delivered within 24-36 hours, ready to share and treasure forever with your loved ones.
             </p>
           </div>
         </div>

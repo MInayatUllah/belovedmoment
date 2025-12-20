@@ -12,7 +12,7 @@ export default function FAQSection() {
     },
     {
       question: "How long does it take to receive my video after placing an order?",
-      answer: "Most videos are completed within 24 to 48 hours, depending on the options you select while ordering. During busy periods, it may take slightly longer — but you'll always be kept updated on the progress."
+      answer: "Most videos are completed within 24 to 36 hours, depending on the options you select while ordering. During busy periods, it may take slightly longer — but you'll always be kept updated on the progress."
     },
     {
       question: "How should I prepare my photos before uploading them?",

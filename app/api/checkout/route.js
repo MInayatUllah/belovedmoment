@@ -8,7 +8,7 @@ export async function POST(request) {
     
     const { processingTime, imageUrl } = await request.json();
     const priceId = processingTime === '15h' 
-      ? process.env.STRIPE_PRICE_ID_24H 
+      ? process.env.STRIPE_PRICE_ID_24H
       : process.env.STRIPE_PRICE_ID_36H
 
     const session = await stripe.checkout.sessions.create({

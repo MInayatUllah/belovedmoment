@@ -9,7 +9,7 @@ export default function ProductSection() {
   const [isUploading, setIsUploading] = useState(false);
   const [shouldShine, setShouldShine] = useState(false);
 
-  const price = selectedTime === '36h' ? 9.99 : 14.99;
+  const price = selectedTime === '36h' ? 9.99 : 11.99;
   const originalPrice = selectedTime === '36h' ? 24.99 : 37.99;
 
   useEffect(() => {
