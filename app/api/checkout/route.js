@@ -2,6 +2,10 @@ import { stripe } from '../../../lib/stripe'
 
 export async function POST(request) {
   try {
+    if (!process.env.STRIPE_SECRET_KEY) {
+      throw new Error('Stripe configuration missing')
+    }
+    
     const { processingTime, imageUrl } = await request.json();
     const priceId = processingTime === '15h' 
       ? process.env.STRIPE_PRICE_ID_24H 
