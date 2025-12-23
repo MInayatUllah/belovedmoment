@@ -18,7 +18,7 @@ export default function ProductSection() {
   ];
 
   const price = selectedTime === '36h' ? 9.99 : 11.99;
-  const originalPrice = selectedTime === '36h' ? 24.99 : 37.99;
+  const originalPrice = selectedTime === '36h' ? 24.99 : 29.99;
 
   useEffect(() => {
     const handleHashChange = () => {
