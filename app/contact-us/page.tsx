@@ -70,11 +70,7 @@ export default function ContactPage() {
             <button
               type="submit"
               disabled={isSubmitting}
-              className={`w-full py-3 px-6 rounded-xl font-semibold transition-all duration-200 cursor-pointer ${
-                isSubmitting
-                  ? 'bg-white/20 text-white/50 cursor-not-allowed'
-                  : 'bg-white text-black hover:bg-gray-100'
-              }`}
+              className={`group bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-bold text-lg px-8 py-4 rounded-full transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/25 inline-flex items-center gap-3 hover-glow w-full center justify-center`}
             >
               {isSubmitting ? (
                 <div className="flex items-center justify-center gap-2">

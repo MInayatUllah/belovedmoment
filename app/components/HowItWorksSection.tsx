@@ -24,7 +24,7 @@ export default function HowItWorksSection() {
           
           {/* Step 1 - Upload */}
           <div className="bg-white rounded-2xl p-8 shadow-lg text-center relative">
-            <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 w-15 h-15 bg-[lab(23%_28.14_-32.02)] rounded-full flex items-center justify-center">
+            <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 w-15 h-15 bg-[lab(23%_28.14_-32.02)] rounded-full flex items-center justify-center bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-bold text-lg rounded-full transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/25 inline-flex items-center gap-3 hover-glow cursor-pointer">
               <span className="text-white font-bold text-xl">1</span>
             </div>
             <div className="mt-12 mb-0">
@@ -42,7 +42,7 @@ export default function HowItWorksSection() {
           
           {/* Step 2 - Animation */}
           <div className="bg-white rounded-2xl p-8 shadow-lg text-center relative">
-            <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 w-15 h-15 bg-[lab(23%_28.14_-32.02)] rounded-full flex items-center justify-center">
+            <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 w-15 h-15 bg-[lab(23%_28.14_-32.02)] rounded-full flex items-center justify-center bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-bold text-lg rounded-full transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/25 inline-flex items-center gap-3 hover-glow cursor-pointer">
               <span className="text-white font-bold text-xl">2</span>
             </div>
             <div className="mt-12 mb-0">
@@ -60,7 +60,7 @@ export default function HowItWorksSection() {
           
           {/* Step 3 - Download */}
           <div className="bg-white rounded-2xl p-8 shadow-lg text-center relative">
-            <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 w-15 h-15 bg-[lab(23%_28.14_-32.02)] rounded-full flex items-center justify-center">
+            <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 w-15 h-15 bg-[lab(23%_28.14_-32.02)] rounded-full flex items-center justify-center bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-bold text-lg rounded-full transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/25 inline-flex items-center gap-3 hover-glow cursor-pointer">
               <span className="text-white font-bold text-xl">3</span>
             </div>
             <div className="mt-12 mb-0">
@@ -81,7 +81,7 @@ export default function HowItWorksSection() {
         <div className="text-center">
           <a 
             href="#Order"
-            className="bg-[lab(23%_28.14_-32.02)] hover:bg-[lab(23%_28.14_-32.02_/_0.9)] px-8 py-3 text-white  rounded-[50px] cursor-pointer font-semibold transition-colors inline-flex items-center gap-3 text-lg"
+            className="group bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-bold text-lg px-8 py-4 rounded-full transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/25 inline-flex items-center gap-3 hover-glow cursor-pointer"
           >
             <span>Get Started Now</span>
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">

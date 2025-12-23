@@ -104,7 +104,7 @@ export default function FAQSection() {
         <div className="text-center mt-12">
           <a 
             href="#Order"
-            className="bg-white text-black px-8 py-3 rounded-[50px] font-semibold hover:bg-gray-100 transition-colors inline-flex items-center gap-3 text-lg"
+            className="group bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-bold text-lg px-8 py-4 rounded-full transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/25 inline-flex items-center gap-3 hover-glow cursor-pointer"
           >
             <span>Order Now</span>
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">

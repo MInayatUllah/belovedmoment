@@ -1,5 +1,6 @@
 import { stripe } from '../../../../lib/stripe'
 import { supabaseAdmin } from '../../../../lib/supabase'
+import { sendOrderConfirmationEmail, sendAdminNotificationEmail } from '../../../../lib/email'
 
 export async function POST(request) {
   try {
@@ -14,10 +15,16 @@ export async function POST(request) {
 
     if (event.type === 'checkout.session.completed') {
       const session = event.data.object
-      
-      const { customer_email, customer_details, amount_total, id: sessionId, metadata } = session
+
+      const { customer_email, customer_details, amount_total, id: sessionId, metadata, invoice } = session
       const { imageUrl, processingTime } = metadata
-      
+
+      let invoiceUrl = '#'
+      if (invoice) {
+        const invoiceDetails = await stripe.invoices.retrieve(invoice)
+        invoiceUrl = invoiceDetails.hosted_invoice_url
+      }
+
       const email = customer_email || customer_details?.email
 
       const { data: orderData, error: orderError } = await supabaseAdmin
@@ -35,6 +42,12 @@ export async function POST(request) {
       if (orderError) {
         throw new Error(`Order creation failed: ${orderError.message}`)
       }
+
+      // Send confirmation email
+      await sendOrderConfirmationEmail(email, orderData, invoiceUrl)
+
+      // Send admin notification
+      await sendAdminNotificationEmail(orderData)
 
       return Response.json({ success: true, orderId: orderData.id })
     }

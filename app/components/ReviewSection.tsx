@@ -19,15 +19,15 @@ export default function ReviewSection() {
   ];
 
   const reviews = [
-    { name: 'Marcus T.', location: 'USA', review: 'Seeing my grandfather move again brought tears to my eyes. The team did an amazing job bringing our old photo to life.', rating: 5, image: '/reviews/1.png' },
-    { name: 'Isabella R.', location: 'UK', review: 'Really impressed with how natural the movement looks. My family loved watching our old wedding photo come alive.', rating: 5, image: '/reviews/2.png' },
-    { name: 'Alexander J.', location: 'Spain', review: 'Perfect gift for my mom. She cried happy tears seeing her parents move again. Worth every penny.', rating: 4, image: '/reviews/3.png' },
-    { name: 'Sophia M.', location: 'Canada', review: 'The editors really know what they\'re doing. My old family photo looks so realistic now. Highly recommend!', rating: 5, image: '/reviews/4.png' },
-    { name: 'Benjamin K.', location: 'Australia', review: 'Lost my dad last year. This service let me see him smile one more time. Thank you so much.', rating: 5, image: '/reviews/5.png' },
-    { name: 'Christopher L.', location: 'Germany', review: 'Fast delivery and great quality. The whole family was amazed at how good it turned out.', rating: 4, image: '/reviews/6.png' },
-    { name: 'Victoria S.', location: 'France', review: 'Turned my wedding photo into something magical. Easy to order and the results are beautiful.', rating: 5, image: '/reviews/7.png' },
-    { name: 'Anastasia P.', location: 'Italy', review: 'The movement looks so smooth and natural. Great way to preserve family memories for future generations.', rating: 5, image: '/reviews/8.png' },
-    { name: 'Gabriella W.', location: 'Netherlands', review: 'Simple process and fantastic results. My kids love watching their grandparents come to life in the photo.', rating: 4, image: '/reviews/9.png' }
+    { name: 'Margaret & Harold T.', location: 'USA', review: 'Seeing our old wedding photo come to life after 50 years of marriage was magical. Our grandchildren were amazed!', rating: 5, image: '/reviews/2.png' },
+    { name: 'Eleanor & Frank R.', location: 'UK', review: 'This brought back so many memories of our younger days. The gentle movement made our vintage photo feel alive again.', rating: 5, image: '/reviews/1.png' },
+    { name: 'Sarah & Michael J.', location: 'Spain', review: 'Perfect anniversary gift! Our engagement photo now moves so naturally. We watch it every day together.', rating: 4, image: '/reviews/3.png' },
+    { name: 'Emma & David M.', location: 'Canada', review: 'Our first photo with our newborn baby is now a living memory. The gentle breathing effect is so realistic and touching.', rating: 5, image: '/reviews/4.png' },
+    { name: 'Lisa & James K.', location: 'Australia', review: 'Family photo with our two kids came alive beautifully. The children love seeing themselves move in the picture!', rating: 5, image: '/reviews/5.png' },
+    { name: 'Maria & Sofia L.', location: 'Germany', review: 'Mother-daughter moment preserved forever. The subtle movements make this photo so much more meaningful to us.', rating: 4, image: '/reviews/6.png' },
+    { name: 'Veterans Association', location: 'France', review: 'Our old military unit photo from the 1940s now shows our brotherhood in motion. Incredible tribute to our fallen comrades.', rating: 5, image: '/reviews/7.png' },
+    { name: 'Roberto & Family', location: 'Italy', review: 'Three generations in one photo - me, my pregnant wife, and my mother. The gentle movements capture our joy perfectly.', rating: 5, image: '/reviews/8.png' },
+    { name: 'Jennifer & Baby Lucas', location: 'Netherlands', review: 'Our first moments together in the hospital are now a living memory. The peaceful breathing effect is so beautiful.', rating: 4, image: '/reviews/9.png' }
   ];
 
   const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
@@ -119,7 +119,7 @@ export default function ReviewSection() {
         <div className="text-center mt-12">
           <button 
             onClick={() => setShowMore(!showMore)}
-            className="bg-white text-black px-8 py-3 rounded-[50px] font-semibold hover:bg-gray-100 transition-colors cursor-pointer inline-flex items-center gap-3 text-lg"
+            className="group bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-bold text-lg px-8 py-4 rounded-full transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/25 inline-flex items-center gap-3 hover-glow cursor-pointer"
           >
             <span>{showMore ? 'Show Less' : 'Load More Stories'}</span>
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
