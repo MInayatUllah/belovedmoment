@@ -2,33 +2,17 @@
 
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay } from 'swiper/modules';
+import 'swiper/css';
 
 export default function HeroSection() {
-  const [currentSlide, setCurrentSlide] = useState(0);
-  const [isTransitioning, setIsTransitioning] = useState(true);
   
   const videos = [
     '/gifs/1.gif',
     '/gifs/2.gif',
     '/gifs/3.gif'
   ];
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentSlide((prev) => prev + 1);
-    }, 5000);
-    return () => clearInterval(interval);
-  }, []);
-
-  useEffect(() => {
-    if (currentSlide === videos.length) {
-      setTimeout(() => {
-        setIsTransitioning(false);
-        setCurrentSlide(0);
-        setTimeout(() => setIsTransitioning(true), 50);
-      }, 1000);
-    }
-  }, [currentSlide, videos.length]);
 
   return (
     <section 
@@ -53,7 +37,7 @@ export default function HeroSection() {
             </div>
             
             <h1 className="fade-in-up relative max-w-[800px] text-balance text-center text-4xl font-light tracking-tight text-slate-300 md:text-left lg:text-6xl lg:leading-[1.1] [&_b]:font-black [&_b]:bg-gradient-to-r [&_b]:from-white [&_b]:to-purple-200 [&_b]:bg-clip-text [&_b]:text-transparent" style={{animationDelay: '0.2s'}}>
-              Transform your <b>Beloved moments</b> into <b>Living Memories</b>
+              Transform your <b>Beloved Moments</b> into <b>Living Memories</b>
             </h1>
             
             <p className="text-xl text-slate-200 mt-8 max-w-[600px] text-center lg:text-left leading-relaxed fade-in-up" style={{animationDelay: '0.4s'}}>
@@ -99,20 +83,27 @@ export default function HeroSection() {
 
           {/* Video Slider */}
           <div className="w-full lg:w-1/2 flex justify-center fade-in" style={{animationDelay: '0.4s'}}>
-            <div className="relative w-full max-w-md lg:max-w-lg overflow-hidden">
-              <div 
-                className={`flex ${isTransitioning ? 'transition-transform duration-1000 ease-in-out' : ''}`}
-                style={{ transform: `translateX(-${currentSlide * 100}%)` }}
+            <div className="relative w-full max-w-md lg:max-w-lg">
+              <Swiper
+                modules={[Autoplay]}
+                autoplay={{
+                  delay: 4000,
+                  disableOnInteraction: false,
+                }}
+                loop={true}
+                speed={1000}
+                className="w-full"
               >
-                {[...videos, videos[0]].map((video, index) => (
-                  <img
-                    key={index}
-                    src={video}
-                    alt={`Demo video ${(index % videos.length) + 1}`}
-                    className="w-full flex-shrink-0 object-contain max-h-[750px]"
-                  />
+                {videos.map((video, index) => (
+                  <SwiperSlide key={index}>
+                    <img
+                      src={video}
+                      alt={`Demo video ${index + 1}`}
+                      className="w-full object-contain max-h-[750px]"
+                    />
+                  </SwiperSlide>
                 ))}
-              </div>
+              </Swiper>
             </div>
           </div>
         </div>
