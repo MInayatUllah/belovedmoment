@@ -21,13 +21,13 @@ export default function ReviewSection() {
   const reviews = [
     { name: 'Margaret & Harold T.', location: 'USA', review: 'Seeing our old wedding photo come to life after 50 years of marriage was magical. Our grandchildren were amazed!', rating: 5, image: '/reviews/2.png' },
     { name: 'Eleanor & Frank R.', location: 'UK', review: 'This brought back so many memories of our younger days. The gentle movement made our vintage photo feel alive again.', rating: 5, image: '/reviews/1.png' },
-    { name: 'Sarah & Michael J.', location: 'Spain', review: 'Perfect anniversary gift! Our engagement photo now moves so naturally. We watch it every day together.', rating: 4, image: '/reviews/3.png' },
+    { name: 'Sarah & Michael J.', location: 'Spain', review: 'Perfect anniversary gift! Our old photo now moves so naturally. We watch it every day together.', rating: 4, image: '/reviews/3.png' },
     { name: 'Emma & David M.', location: 'Canada', review: 'Our first photo with our newborn baby is now a living memory. The gentle breathing effect is so realistic and touching.', rating: 5, image: '/reviews/4.png' },
     { name: 'Lisa & James K.', location: 'Australia', review: 'Family photo with our two kids came alive beautifully. The children love seeing themselves move in the picture!', rating: 5, image: '/reviews/5.png' },
     { name: 'Maria & Sofia L.', location: 'Germany', review: 'Mother-daughter moment preserved forever. The subtle movements make this photo so much more meaningful to us.', rating: 4, image: '/reviews/6.png' },
     { name: 'Veterans Association', location: 'France', review: 'Our old military unit photo from the 1940s now shows our brotherhood in motion. Incredible tribute to our fallen comrades.', rating: 5, image: '/reviews/7.png' },
-    { name: 'Roberto & Family', location: 'Italy', review: 'Three generations in one photo - me, my pregnant wife, and my mother. The gentle movements capture our joy perfectly.', rating: 5, image: '/reviews/8.png' },
-    { name: 'Jennifer & Baby Lucas', location: 'Netherlands', review: 'Our first moments together in the hospital are now a living memory. The peaceful breathing effect is so beautiful.', rating: 4, image: '/reviews/9.png' }
+    { name: 'Roberto & Family', location: 'Italy', review: 'Three generations in one photo - me, my pregnant daughter, and my son in law. The gentle movements capture our joy perfectly.', rating: 5, image: '/reviews/8.png' },
+    { name: 'Jennifer & Baby Lucas', location: 'Netherlands', review: 'Our first moments together in the hospital are now a living memory. The peaceful breathing effect is so beautiful for me and my husband.', rating: 4, image: '/reviews/9.png' }
   ];
 
   const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
@@ -38,7 +38,7 @@ export default function ReviewSection() {
   return (
     <section className="py-20" style={{ backgroundColor: 'lab(23 28.14 -32.02)' }} id="reviews">
       <div className="container mx-auto px-4">
-        
+
         {/* Part 1 - Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
@@ -50,14 +50,14 @@ export default function ReviewSection() {
           <p className="text-white/80 max-w-3xl mx-auto">
             Join thousands of families who have brought their precious memories to life with our expert editing team, creating magical moments that reconnect you with your loved ones.
           </p>
-          
+
         </div>
 
         {/* Part 2 - Review Cards */}
         <div className="grid grid-cols-1 gap-4 px-4 md:grid-cols-2 md:gap-6 md:px-0 lg:grid-cols-3">
           {displayedReviews.map((review, index) => (
-            <div 
-              key={index} 
+            <div
+              key={index}
               className="flex h-fit flex-col items-start gap-4 rounded-2xl border border-white/15 bg-slate-900/30 p-6 backdrop-blur-xl cursor-pointer hover:bg-slate-900/40 transition-colors"
               onClick={() => {
                 const orderSection = document.getElementById('Order');
@@ -66,13 +66,13 @@ export default function ReviewSection() {
                 }
               }}
             >
-              
+
               {/* Video */}
               <div className="pointer-events-none relative w-full">
                 <div className="h-fit max-w-[450px]">
                   <div className="relative h-fit overflow-hidden rounded-[14px]">
-                    <img 
-                      src={videos[index % videos.length]} 
+                    <img
+                      src={videos[index % videos.length]}
                       alt=""
                       className="w-full h-auto object-contain"
                     />
@@ -82,10 +82,10 @@ export default function ReviewSection() {
 
               {/* Profile */}
               <div className="flex items-center gap-2">
-                <img 
-                  className="flex-center size-[45px] flex-shrink-0 rounded-full bg-blue-600/20" 
-                  src={review.image} 
-                  alt="" 
+                <img
+                  className="flex-center size-[45px] flex-shrink-0 rounded-full bg-blue-600/20"
+                  src={review.image}
+                  alt=""
                 />
                 <div>
                   <p className="font-semibold text-white opacity-80">{review.name}</p>
@@ -103,7 +103,7 @@ export default function ReviewSection() {
               {/* Rating */}
               <div className="mt-auto flex items-center gap-2">
                 <div className="flex">
-                  {[1,2,3,4,5].map((star) => (
+                  {[1, 2, 3, 4, 5].map((star) => (
                     <span key={star} className={`text-xl ${star <= review.rating ? 'text-yellow-400' : 'text-gray-400'}`}>
                       ★
                     </span>
@@ -117,7 +117,7 @@ export default function ReviewSection() {
 
         {/* Part 3 - Load More/Show Less Button */}
         <div className="text-center mt-12">
-          <button 
+          <button
             onClick={() => setShowMore(!showMore)}
             className="group bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-bold text-lg px-8 py-4 rounded-full transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/25 inline-flex items-center gap-3 hover-glow cursor-pointer"
           >
