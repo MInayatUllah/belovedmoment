@@ -19,7 +19,7 @@ export default function ReviewSection() {
   ];
 
   const reviews = [
-    { name: 'Margaret & Harold T.', location: 'USA', review: 'Seeing our old wedding photo come to life after 50 years of marriage was magical. Our grandchildren were amazed!', rating: 5, image: '/reviews/2.png' },
+    { name: 'Margaret & Harold T.', location: 'USA', review: 'When I saw my grandparents’ old photo come to life, it felt like magic. They’ve been together for so long, and I couldn’t stop smiling!', rating: 5, image: '/reviews/2.png' },
     { name: 'Eleanor & Frank R.', location: 'UK', review: 'This brought back so many memories of our younger days. The gentle movement made our vintage photo feel alive again.', rating: 5, image: '/reviews/1.png' },
     { name: 'Sarah & Michael J.', location: 'Spain', review: 'Perfect anniversary gift! Our old photo now moves so naturally. We watch it every day together.', rating: 4, image: '/reviews/3.png' },
     { name: 'Emma & David M.', location: 'Canada', review: 'Our first photo with our newborn baby is now a living memory. The gentle breathing effect is so realistic and touching.', rating: 5, image: '/reviews/4.png' },
