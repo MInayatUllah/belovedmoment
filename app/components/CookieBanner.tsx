@@ -17,6 +17,11 @@ export default function CookieBanner() {
     setShowBanner(false);
   };
 
+  const declineCookies = () => {
+    localStorage.setItem('cookie-consent', 'declined');
+    setShowBanner(false);
+  };
+
   if (!showBanner) return null;
 
   return (
@@ -25,12 +30,20 @@ export default function CookieBanner() {
         <p className="text-sm">
           We use cookies to enhance your experience. By continuing to visit this site you agree to our use of cookies.
         </p>
-        <button
-          onClick={acceptCookies}
-          className="bg-white text-black px-6 py-2 rounded hover:bg-gray-100 transition-colors whitespace-nowrap"
-        >
-          Accept
-        </button>
+        <div className="flex gap-2">
+          <button
+            onClick={declineCookies}
+            className="bg-transparent border border-white text-white px-6 py-2 rounded hover:bg-white hover:text-black transition-colors whitespace-nowrap cursor-pointer"
+          >
+            Decline
+          </button>
+          <button
+            onClick={acceptCookies}
+            className="bg-white text-black px-6 py-2 rounded hover:bg-gray-100 transition-colors whitespace-nowrap cursor-pointer"
+          >
+            Accept
+          </button>
+        </div>
       </div>
     </div>
   );

@@ -128,14 +128,30 @@ export default function TermsConditions() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-semibold mb-4">13. Governing Law (United Kingdom)</h2>
+            <h2 className="text-2xl font-semibold mb-4">13. Cookies Policy</h2>
+            <div className="text-gray-700 space-y-4">
+              <p>Our website uses cookies to improve your browsing experience and provide personalized content.</p>
+              <p><strong>What are cookies:</strong> Small text files stored on your device that help us understand how you use our website.</p>
+              <p><strong>Types of cookies we use:</strong></p>
+              <ul className="list-disc pl-6 space-y-2">
+                <li><strong>Essential cookies:</strong> Required for basic website functionality</li>
+                <li><strong>Analytics cookies:</strong> Help us understand website usage and improve our services</li>
+                <li><strong>Marketing cookies:</strong> Used to deliver relevant advertisements</li>
+              </ul>
+              <p><strong>Your choices:</strong> You can accept or decline non-essential cookies through our cookie banner. You can also manage cookies through your browser settings.</p>
+              <p>By continuing to use our website, you consent to our use of cookies as described in this policy.</p>
+            </div>
+          </section>
+
+          <section>
+            <h2 className="text-2xl font-semibold mb-4">14. Governing Law (United Kingdom)</h2>
             <div className="text-gray-700">
               <p>These Terms & Conditions are governed by and interpreted in accordance with the laws of England and Wales. Any disputes shall be subject to the exclusive jurisdiction of the courts of England and Wales.</p>
             </div>
           </section>
 
           <section>
-            <h2 className="text-2xl font-semibold mb-4">14. Contact Information</h2>
+            <h2 className="text-2xl font-semibold mb-4">15. Contact Information</h2>
             <div className="text-gray-700 space-y-2">
               <p>If you have any questions regarding these Terms & Conditions, please contact:</p>
               <p>Email: support@belovedmoment.com</p>
