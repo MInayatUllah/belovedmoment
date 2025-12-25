@@ -1,25 +1,38 @@
 'use client';
 
 import { useState } from 'react';
-import { contactEmail } from '../../lib/email';
 
 export default function ContactPage() {
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
 
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email, message }),
+      });
 
-    
-    const emailData: { email: string; message: string } = {
-      email: email,
-      message: message,
-    };
+      if (!response.ok) {
+        throw new Error('Failed to send message');
+      }
 
-    await contactEmail(contactEmail);
+      setEmail('');
+      setMessage('');
+      setIsSubmitted(true);
+    } catch (error) {
+      alert('Failed to send message. Please try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -31,6 +44,15 @@ export default function ContactPage() {
       
       <div className="relative z-10 w-full max-w-lg">
         <div className="rounded-2xl border border-white/15 bg-slate-900/30 p-8 backdrop-blur-xl">
+          {isSubmitted ? (
+            <div className="text-center">
+              <h1 className="text-3xl font-bold text-white mb-4">Thank You!</h1>
+              <p className="text-white/80">
+                Thank you for contacting us. The BelovedMoment team will reach you soon.
+              </p>
+            </div>
+          ) : (
+            <>
           <div className="text-center mb-8">
             <h1 className="text-3xl font-bold text-white mb-4">Contact Us</h1>
             <p className="text-white/80">
@@ -84,6 +106,8 @@ export default function ContactPage() {
               )}
             </button>
           </form>
+          </>
+          )}
         </div>
       </div>
     </div>
