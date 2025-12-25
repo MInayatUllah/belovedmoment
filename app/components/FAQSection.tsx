@@ -6,9 +6,13 @@ export default function FAQSection() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   const faqs: Array<{question: string; answer: string}> = [
+     {
+      question: "Return & Refund",
+      answer: "We offer 1 complimentary revision if you are not satisfied with results. All orders are protected by our 100% Money-Back Guarantee within 14days after delivery. The payment will be returned within 3-14 business days through your original method of payment. Contact us at support@belovedmoment.com"
+    },
     {
       question: "Can I trust Beloved Moment with my photos and memories?",
-      answer: "Yes, completely. At Beloved Moment, your photos and memories are treated with respect, care, and privacy. We use secure systems to process your uploads and never sell or share your content with third parties. Your moments belong to you always."
+      answer: "Yes, completely. At Beloved Moment, your photos and memories are treated with respect, care, and privacy. We use secure systems to process your uploads."
     },
     {
       question: "How long does it take to receive my video after placing an order?",
@@ -24,7 +28,7 @@ export default function FAQSection() {
     },
     {
       question: "I'm having trouble placing an order or uploading photos — can you help?",
-      answer: "Feel free to ask! If you experience any issues during checkout or uploading, simply contact our support team. We'll walk you through the process and make sure your order is completed smoothly."
+      answer: "Feel free to ask! If you experience any issues during checkout or uploading, simply contact our support team at <a href='mailto:support@belovedmoment.com' style='color: #c084fc !important; text-decoration: underline !important; transition: all 0.3s !important;' onmouseover='this.style.color=`#f472b6`' onmouseout='this.style.color=`#c084fc`'>support@belovedmoment.com</a> We'll walk you through the process and make sure your order is completed smoothly."
     },
     {
       question: "How will I know that my photos have been successfully submitted?",
@@ -92,8 +96,7 @@ export default function FAQSection() {
               <div className={`overflow-hidden transition-all duration-300 w-full ${
                 openIndex === index ? 'max-h-96' : 'max-h-0'
               }`}>
-                <p className="text-sm text-white opacity-80">
-                  {faq.answer}
+                <p className="text-sm text-white opacity-80" dangerouslySetInnerHTML={{ __html: faq.answer }}>
                 </p>
               </div>
             </div>

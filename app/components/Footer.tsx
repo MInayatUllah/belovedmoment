@@ -90,7 +90,7 @@ export default function Footer() {
                 <span key={i} className="text-yellow-400 text-sm">★</span>
               ))}
             </div>
-            <span className="text-sm text-purple-200">4.8/5 from 2,785 reviews</span>
+            <span className="text-sm text-purple-200">4.8/5 from 126 reviews</span>
           </div>
         </div>
       </div>

@@ -16,7 +16,7 @@ export default function ReturnRefundPolicy() {
           <section>
             <h2 className="text-2xl font-semibold mb-4">Money-Back Guarantee</h2>
             <div className="text-gray-700 space-y-4">
-              <p>All orders are protected by our 100% Money-Back Guarantee in the event that we are unable to deliver an acceptable final result.</p>
+              <p>All orders are protected by our Money-Back Guarantee within 14 days after delivery in the event that we are unable to deliver an acceptable final result.</p>
               <p>This means:</p>
               <ul className="list-disc pl-6 space-y-2">
                 <li>We will always make every reasonable effort to revise and adjust your photo or video to match your expectations.</li>
