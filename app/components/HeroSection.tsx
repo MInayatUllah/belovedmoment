@@ -62,7 +62,7 @@ export default function HeroSection() {
                   ))}
                 </div>
                 <span className="text-base text-slate-300">
-                  <b className="text-white text-lg">4.8/5</b> • 1,249 reviews
+                  <b className="text-white text-lg">4.8/5</b> • 2,785 reviews
                 </span>
               </div>
             </div>
