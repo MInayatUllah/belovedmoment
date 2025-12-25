@@ -104,7 +104,7 @@ export default function ProductSection() {
       <div className="relative z-10 container mx-auto px-4 max-w-5xl">
 
         {/* 1. Video Section */}
-        <div className="mb-12 text-center">
+        {/* <div className="mb-12 text-center">
           <div className="relative inline-block">
             <div
               className="w-full h-auto bg-black rounded-[30px] overflow-hidden relative cursor-pointer"
@@ -143,7 +143,7 @@ export default function ProductSection() {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
 
         {/* 2. Heading and Para */}
         <div className="text-center mb-12">
