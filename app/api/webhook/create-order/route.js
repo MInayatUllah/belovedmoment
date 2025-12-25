@@ -19,12 +19,6 @@ export async function POST(request) {
       const { customer_email, customer_details, amount_total, id: sessionId, metadata, invoice } = session
       const { imageUrl, processingTime } = metadata
 
-      let invoiceUrl = '#'
-      if (invoice) {
-        const invoiceDetails = await stripe.invoices.retrieve(invoice)
-        invoiceUrl = invoiceDetails.hosted_invoice_url
-      }
-
       const email = customer_email || customer_details?.email
 
       const { data: orderData, error: orderError } = await supabaseAdmin
@@ -43,11 +37,22 @@ export async function POST(request) {
         throw new Error(`Order creation failed: ${orderError.message}`)
       }
 
-      // Send confirmation email
-      await sendOrderConfirmationEmail(email, orderData, invoiceUrl)
 
-      // Send admin notification
-      await sendAdminNotificationEmail(orderData)
+
+      let invoiceUrl = '#';
+      if (invoice) {
+        try {
+          const invoiceDetails = await stripe.invoices.retrieve(invoice);
+          invoiceUrl = invoiceDetails.hosted_invoice_url;
+        } catch (e) {
+          console.error("Invoice retrieval failed, but order is saved.", e);
+        }
+      }
+
+      await Promise.all([
+        sendOrderConfirmationEmail(email, orderData, invoiceUrl),
+        sendAdminNotificationEmail(orderData)
+      ]);
 
       return Response.json({ success: true, orderId: orderData.id })
     }
