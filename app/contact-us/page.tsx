@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { contactEmail } from '../../lib/email';
 
 export default function ContactPage() {
   const [email, setEmail] = useState('');
@@ -10,14 +11,15 @@ export default function ContactPage() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+
+
     
-    // Simulate form submission
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setEmail('');
-      setMessage('');
-      alert('Message sent successfully!');
-    }, 2000);
+    const emailData: { email: string; message: string } = {
+      email: email,
+      message: message,
+    };
+
+    await contactEmail(contactEmail);
   };
 
   return (
