@@ -151,7 +151,7 @@ export default function ProductSection() {
             Transform Your Photos Into Living Memories
           </h2>
           <p className="text-base sm:text-lg md:text-xl text-gray-700 max-w-3xl mx-auto px-4 leading-relaxed">
-            We'll turn your old picture into a 10 second emotional video, delivered when you choose.
+            We'll turn your picture into 8 - 11 seconds of video clip, delivered when you choose as per plan.
           </p>
         </div>
 
@@ -167,7 +167,7 @@ export default function ProductSection() {
             </div>
           </div>
           <p className="text-gray-700 text-lg">
-            <span className="font-bold">4.8</span> (2,785 reviews)
+            <span className="font-bold">4.8</span> (126 reviews)
           </p>
         </div>
 
