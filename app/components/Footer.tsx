@@ -82,7 +82,7 @@ export default function Footer() {
         {/* Bottom Section */}
         <div className="mt-8 pt-6 border-t border-purple-300/20 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-sm text-purple-200 text-center md:text-left">
-            &copy; 2024 Beloved Moment. All rights reserved.
+            &copy; {new Date().getFullYear()} Beloved Moment. All rights reserved.
           </p>
           <div className="flex items-center gap-4">
             <div className="flex items-center gap-1">

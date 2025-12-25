@@ -20,9 +20,9 @@ export default function ReviewSection() {
 
   const reviews = [
     { name: 'Margaret & Harold T.', location: 'USA', review: 'When I saw my grandparents’ old photo come to life, it felt like magic. They’ve been together for so long, and I couldn’t stop smiling!', rating: 5, image: '/reviews/2.png' },
-    { name: 'Eleanor & Frank R.', location: 'UK', review: 'This brought back so many memories of our younger days. The gentle movement made our vintage photo feel alive again.', rating: 5, image: '/reviews/1.png' },
-    { name: 'Sarah & Michael J.', location: 'Spain', review: 'Perfect anniversary gift! Our old photo now moves so naturally. We watch it every day together.', rating: 4, image: '/reviews/3.png' },
-    { name: 'Emma & David M.', location: 'Canada', review: 'Our first photo with our newborn baby is now a living memory. The gentle breathing effect is so realistic and touching.', rating: 5, image: '/reviews/4.png' },
+    { name: 'Eleanor & Frank R.', location: 'UK', review: 'As a Christmas gift for my wife, I got a video by Beloved Moment team, making our memory feel alive.', rating: 5, image: '/reviews/1.png' },
+    { name: 'Sarah & Michael J.', location: 'Spain', review: 'Perfect anniversary gift! Our old photo now moves so naturally. We watch it every day together.', rating: 4, image: '/reviews/33.jpg  ' },
+    { name: 'Emma & David M.', location: 'Canada', review: 'Our first photo with our newborn baby is now a living memory. The gentle breathing effect is so realistic and touching.', rating: 5, image: '/reviews/44.jpg' },
     { name: 'Lisa & James K.', location: 'Australia', review: 'Family photo with our two kids came alive beautifully. The children love seeing themselves move in the picture!', rating: 5, image: '/reviews/5.png' },
     { name: 'Maria & Sofia L.', location: 'Germany', review: 'Mother-daughter moment preserved forever. The subtle movements make this photo so much more meaningful to us.', rating: 4, image: '/reviews/6.png' },
     { name: 'Veterans Association', location: 'France', review: 'Our old military unit photo from the 1940s now shows our brotherhood in motion. Incredible tribute to our fallen comrades.', rating: 5, image: '/reviews/7.png' },
@@ -83,7 +83,7 @@ export default function ReviewSection() {
               {/* Profile */}
               <div className="flex items-center gap-2">
                 <img
-                  className="flex-center size-[45px] flex-shrink-0 rounded-full bg-blue-600/20"
+                  className="flex-center size-[45px] flex-shrink-0 rounded-full bg-blue-600/20 object-cover"
                   src={review.image}
                   alt=""
                 />
