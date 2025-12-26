@@ -226,7 +226,7 @@ export default function ProductSection() {
                   </div>
                   <div className="text-center">
                     <p className={`font-bold text-[24px] ${selectedTime === '15h' ? 'text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-600' : 'text-black'}`}>24 <span className='text-sm'>hours</span></p>
-                    {/* <p className={`text-sm`}>Express</p> */}
+                    <p className={`text-sm`}>Express</p>
                     <div className="hidden sm:block text-[10px] text-gray-400 mt-1">Delivery tomorrow</div>
                   </div>
                 </button>
