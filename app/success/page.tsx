@@ -10,9 +10,18 @@ async function getOrderDetails(sessionId: string) {
     // 1. Fetch Stripe Session to get basic details immediately
     const session = await stripe.checkout.sessions.retrieve(sessionId);
 
-    // 2. Fetch Supabase Order
-    // Note: Webhook might be slightly delayed. In a real production app, 
-    // you might want client-side polling or a "loading" state if not found immediately.
+    // 2. Get invoice URL if available
+    let invoiceUrl = null;
+    if (session.invoice) {
+      try {
+        const invoice = await stripe.invoices.retrieve(session.invoice as string);
+        invoiceUrl = invoice.hosted_invoice_url;
+      } catch (e) {
+        console.error('Invoice retrieval failed:', e);
+      }
+    }
+
+    // 3. Fetch Supabase Order
     let order = null;
     if (supabaseAdmin) {
       const { data } = await supabaseAdmin
@@ -25,7 +34,8 @@ async function getOrderDetails(sessionId: string) {
 
     return {
       session,
-      order
+      order,
+      invoiceUrl
     };
   } catch (error) {
     console.error('Error fetching order details:', error);
@@ -74,12 +84,12 @@ export default async function SuccessPage({
     )
   }
 
-  const { session, order } = data;
+  const { session, order, invoiceUrl } = data;
   const totalAmount = session.amount_total ? (session.amount_total / 100).toFixed(2) : '0.00';
   const currency = session.currency?.toUpperCase() || 'GBP';
 
   return (
-    <div className="min-h-screen bg-gray-50 py-12 px-4 sm:px-6 lg:px-8 flex items-center justify-center">
+    <div className="min-h-screen bg-white py-12 px-4 sm:px-6 lg:px-8 flex items-center justify-center">
       <div className="max-w-xl w-full space-y-8 bg-white p-10 rounded-2xl shadow-xl">
 
         {/* Success Header */}
@@ -137,7 +147,7 @@ export default async function SuccessPage({
             </div>
             {session.metadata?.processingTime && (
               <div className="text-sm text-gray-500">
-                Speed: {session.metadata.processingTime === '15h' ? 'Express (24h)' : 'Standard (36h)'}
+                Speed: {session.metadata.processingTime === '24h' ? 'Express (24h)' : 'Standard (36h)'}
               </div>
             )}
           </div>
@@ -157,18 +167,32 @@ export default async function SuccessPage({
             </p>
           </div>
 
+          <div className="bg-green-50 p-4 rounded-lg flex items-start gap-3">
+            <svg className="w-6 h-6 text-green-500 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+            </svg>
+            <p className="text-sm text-green-800">
+              A confirmation email with your order details and invoice has been sent to <strong>{session.customer_details?.email || order?.email}</strong>.
+            </p>
+          </div>
+
+          {/* Download Invoice Button */}
+          {invoiceUrl && (
+            <a
+              href={invoiceUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block w-full bg-blue-600 hover:bg-blue-700 text-white py-3 px-4 rounded-lg font-medium text-center transition-colors"
+            >
+              Download Invoice
+            </a>
+          )}
+
           <Link
             href="/"
             className="block w-full bg-black text-white py-4 px-6 rounded-xl font-bold text-center hover:bg-gray-800 transition-transform hover:scale-[1.02] active:scale-[0.98]"
           >
             Return to Home
-          </Link>
-
-          <Link
-            href="/#Order"
-            className="block w-full bg-white text-gray-700 border-2 border-gray-200 py-4 px-6 rounded-xl font-bold text-center hover:border-gray-300 hover:bg-gray-50 transition-colors"
-          >
-            Create Another Video
           </Link>
         </div>
       </div>

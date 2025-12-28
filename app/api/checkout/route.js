@@ -7,7 +7,7 @@ export async function POST(request) {
     }
 
     const { processingTime, imageUrl } = await request.json();
-    const priceId = processingTime === '15h'
+    const priceId = processingTime === '24h'
       ? process.env.STRIPE_PRICE_ID_24H
       : process.env.STRIPE_PRICE_ID_36H
 
