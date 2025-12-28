@@ -147,7 +147,7 @@ export default async function SuccessPage({
             </div>
             {session.metadata?.processingTime && (
               <div className="text-sm text-gray-500">
-                Speed: {session.metadata.processingTime === '15h' ? 'Express (24h)' : 'Standard (36h)'}
+                Speed: {session.metadata.processingTime === '24h' ? 'Express (24h)' : 'Standard (36h)'}
               </div>
             )}
           </div>

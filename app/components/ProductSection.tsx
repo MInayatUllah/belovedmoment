@@ -215,8 +215,8 @@ export default function ProductSection() {
                   </div>
                 </button>
                 <button
-                  onClick={() => setSelectedTime('15h')}
-                  className={`p-3 sm:p-4 rounded-xl border-2 transition-all relative w-[140px] sm:w-[180px] md:w-[200px] cursor-pointer group ${selectedTime === '15h'
+                  onClick={() => setSelectedTime('24h')}
+                  className={`p-3 sm:p-4 rounded-xl border-2 transition-all relative w-[140px] sm:w-[180px] md:w-[200px] cursor-pointer group ${selectedTime === '24h'
                     ? 'border-purple-500 bg-gradient-to-br from-purple-50 to-pink-50 shadow-xl shadow-purple-100 ring-2 ring-purple-500 ring-offset-2 transform scale-[1.02]'
                     : 'border-gray-200 hover:border-purple-300 hover:shadow-lg'
                     }`}
@@ -225,7 +225,7 @@ export default function ProductSection() {
                     FASTEST +£2
                   </div>
                   <div className="text-center">
-                    <p className={`font-bold text-[24px] ${selectedTime === '15h' ? 'text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-600' : 'text-black'}`}>24 <span className='text-sm'>hours</span></p>
+                    <p className={`font-bold text-[24px] ${selectedTime === '24h' ? 'text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-600' : 'text-black'}`}>24 <span className='text-sm'>hours</span></p>
                     <p className={`text-sm`}>Express</p>
                     <div className="hidden sm:block text-[10px] text-gray-400 mt-1">Delivery tomorrow</div>
                   </div>
